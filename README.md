@@ -34,7 +34,7 @@ Questo progetto dimostra come identificare, analizzare e sfruttare una vulnerabi
   - Apache2: server web per servire la pagina vulnerabile.
   - MySQL: database in cui sono salvati i dati (es. credenziali utenti).
 - Applicazione Vulnerabile:
-  - Una pagina PHP con un form di login (login.php) vulnerabile a SQL Injection.
+  - Una pagina HTML con un form di login (login.php) vulnerabile a SQL Injection.
 - Rete e Accessibilità:
   - Configurazione della rete tramite scheda Bridge in VirtualBox.
   - IP assegnato al server: ad esempio 192.168.1.29.
@@ -46,15 +46,18 @@ Questo progetto dimostra come identificare, analizzare e sfruttare una vulnerabi
 1. Installa Apache, PHP e MySQL:  
     sudo apt update  
     sudo apt upgrade -y  
-    sudo apt install apache2  
-    sudo apt install mysql-server  
+    sudo apt install apache2
+    sudo apt install mysql-server
+    sudo mysql_secure_installation
     sudo apt install php
-2. Carica i file nel server web:  
+    sudo apt php-mysqli
+    sudo apt install ssh
+3. Carica i file nel server web:  
     Copia i seguenti file nella directory /var/www/html/:
     - login.php
     - create_and_populate_db.sql
     - paginaWeb.html
-3. Configura il Database:
+4. Configura il Database:
     - Accedi a MySQL:  
         sudo mysql -u root -p
     - Seleziona il database (se necessario):  
