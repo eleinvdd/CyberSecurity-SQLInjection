@@ -98,6 +98,7 @@ Per ricavare man mano i dati necessari per estrapolare le informazioni contenute
 - /app: directory contenente l'applicativo.
 - /dump SQLMap: cartella contenente il dump dell'attacco effettuato da sqlmap
 - user_db.dmp: dump del database MySQL di esempio.
+- dump_wireshark.pcapng: dump dei pacchetti sniffati con WireShark a seguito dell'attacco eseguito con sqlmap
 - README.md: documentazione del progetto.
 
 **Risorse Utili**
