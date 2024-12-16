@@ -96,6 +96,7 @@ Per ricavare man mano i dati necessari per estrapolare le informazioni contenute
 **Struttura del Repository**
 
 - /app: directory contenente l'applicativo.
+- /dump SQLMap: cartella contenente il dump dell'attacco effettuato da sqlmap
 - user_db.dmp: dump del database MySQL di esempio.
 - README.md: documentazione del progetto.
 
